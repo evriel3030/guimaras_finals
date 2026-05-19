@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiry – Guimaras Tourism</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+<style>
+.text-block-pacific{background:#fff;border-radius:12px;border:1px solid #e8f0e8;padding:28px 32px;margin:0 auto;font-size:.97rem;line-height:1.8;color:#3a4a5a;box-shadow:0 4px 15px rgba(0,0,0,.06);}
+.text-block-pacific h3{color:#1a9e5c;font-family:'Playfair Display',serif;margin-top:20px;}
+.dest-grid-pacific{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;padding:20px 0;}
+.food-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.1);transition:transform .3s;width:290px;}
+.food-card:hover{transform:translateY(-6px);}
+.food-card-img img{width:100%;height:180px;object-fit:cover;}
+.food-card h3{padding:12px 14px 6px;color:#1B5E20;font-size:1rem;font-family:'Playfair Display',serif;}
+.food-card p{padding:0 14px 12px;font-size:.86rem;color:#5a6a7a;line-height:1.5;}
+.food-card a{display:inline-block;margin:0 14px 14px;}
+</style>
+</head>
+<body>
+<nav id="mainNav" class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/guimaras-logo.png" alt="Guimaras" onerror="this.style.display='none'">
+      <div class="brand-text">Province of Guimaras<span>Western Visayas, Philippines</span></div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+       <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about-guimaras.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link" href="festivals.html">Festivals</a></li>
+        <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="travel-tips.html">Travel Tips</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="inquiry.html">Inquire Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+<div class="page-hero" style="
+  background: linear-gradient(to right,
+    #152535,
+    #1f3448,
+    #FFC107
+  );
+">
+  <div class="page-hero-content container">
+    <div class="page-hero-tag">Get in Touch</div><h1>Send an Inquiry</h1><p>Fill out the form and our tourism team will respond within 1–2 business days.</p>
+    <nav aria-label="breadcrumb"><ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Send an Inquiry</li>
+    </ol></nav>
+  </div>
+</div>
+
+<section class="inquiry-section section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="inquiry-card" data-animate>
+          <div class="text-center mb-4">
+            <div class="section-tag" style="color:var(--gold)">Plan Your Visit</div>
+            <h2 class="section-title" style="color:#fff">Guimaras <span style="color:var(--gold)">Inquiry Form</span></h2>
+            <div class="section-divider center" style="background:linear-gradient(90deg,var(--gold),var(--primary))"></div>
+            <p style="color:var(--text-light);font-size:.9rem;">All fields marked with <span style="color:#e74c3c">*</span> are required.</p>
+          </div>
+
+          <div id="inquiryFormWrap">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Full Name <span style="color:#e74c3c">*</span></label>
+                <input type="text" class="form-control" id="fName" placeholder="e.g. Juan dela Cruz">
+                <div class="invalid-feedback" id="fNameErr">Full name is required.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email Address <span style="color:#e74c3c">*</span></label>
+                <input type="email" class="form-control" id="fEmail" placeholder="e.g. juan@email.com">
+                <div class="invalid-feedback" id="fEmailErr">Please enter a valid email address.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Contact Number <span style="color:#e74c3c">*</span></label>
+                <input type="text" class="form-control" id="fContact" placeholder="e.g. 09171234567">
+                <div class="invalid-feedback" id="fContactErr">Numbers only, minimum 7 digits.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Selected Destination <span style="color:#e74c3c">*</span></label>
+                <select class="form-select" id="fDest">
+                  <option value="">-- Choose a destination --</option>
+                  <optgroup label="Buenavista">
+                    <option>Roca Encantada</option>
+                    <option>Navalas Church</option>
+                    <option>MacArthur Wharf</option>
+                    <option>Daliran Cave</option>
+                    <option>Siete Pecados Islands</option>
+                    <option>Tely's Beach House</option>
+                  </optgroup>
+                  <optgroup label="Jordan">
+                    <option>Balaan Bukid (Holy Mountain)</option>
+                    <option>Trappist Abbey</option>
+                    <option>Smallest Plaza</option>
+                    <option>Tatlong Pulo Beach</option>
+                    <option>Ave Maria Island</option>
+                    <option>The Pitstop Restaurant</option>
+                    <option>Guimaras Provincial Capitol</option>
+                  </optgroup>
+                  <optgroup label="Nueva Valencia">
+                    <option>Alubihod Beach</option>
+                    <option>Guisi Lighthouse</option>
+                    <option>Taklong Island</option>
+                    <option>Villa Igang Beach Resort</option>
+                    <option>Andana Resort</option>
+                    <option>Raymen Beach Resort</option>
+                    <option>Nature's Eye Beach Resort</option>
+                  </optgroup>
+                  <optgroup label="San Lorenzo">
+                    <option>San Lorenzo Wind Farm</option>
+                    <option>Holy Family Hills</option>
+                    <option>Sapal Weaving Village</option>
+                    <option>MJ Grapes Farm</option>
+                    <option>Vilches Beach Resort</option>
+                  </optgroup>
+                  <optgroup label="Sibunag">
+                    <option>Us-Usan Reef Beach</option>
+                    <option>Dasal Falls</option>
+                    <option>Costa Aguada Island Resort</option>
+                    <option>Bougainvillea Garden &amp; Farm</option>
+                  </optgroup>
+                  <option value="Island Hopping Tour">Island Hopping Tour (General)</option>
+                  <option value="Manggahan Festival">Manggahan Festival</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div class="invalid-feedback" id="fDestErr">Please select a destination.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Travel Date <span style="color:#e74c3c">*</span></label>
+                <input type="date" class="form-control" id="fDate">
+                <div class="invalid-feedback" id="fDateErr">Please select a travel date.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Number of Visitors <span style="color:#e74c3c">*</span></label>
+                <input type="number" class="form-control" id="fVisitors" min="1" placeholder="e.g. 4">
+                <div class="invalid-feedback" id="fVisitorsErr">Must be at least 1 visitor.</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Message <span style="color:#e74c3c">*</span></label>
+                <textarea class="form-control" id="fMessage" rows="5" placeholder="Tell us about your travel plans, questions, or special requests…"></textarea>
+                <div class="invalid-feedback" id="fMessageErr">Please enter your message.</div>
+              </div>
+              <div class="col-12 mt-2">
+                <button class="btn-submit" onclick="submitInquiry()">
+                  <i class="fas fa-paper-plane me-2"></i>Submit Inquiry
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✅</div>
+            <h4>Thank You for Your Inquiry!</h4>
+            <p>Our Guimaras Tourism team will contact you within 1–2 business days. We look forward to helping you plan the perfect visit!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">
+          <img src="images/guimaras-logo.png" alt="Guimaras" onerror="this.style.display='none'">
+          <h5>Province of Guimaras</h5>
+          <p>The Mango Capital of the Philippines — an island paradise of beaches, heritage, and sweet flavors in Western Visayas.</p>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/ProvinceOfGuimaras" target="_blank" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/guimarasprovince/" target="_blank" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/639171146245" target="_blank" class="footer-social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:info@guimaras.gov.ph" class="footer-social-btn"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6 class="footer-heading">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-guimaras.html">About Guimaras</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="festivals.html">Festivals</a></li>
+          <li><a href="food.html">Food</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="travel-tips.html">Travel Tips</a></li>
+          <li><a href="inquiry.html">Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-heading">Municipalities</h6>
+        <ul class="footer-links">
+          <li><a href="jordan.html">Jordan (Capital)</a></li>
+          <li><a href="buenavista.html">Buenavista</a></li>
+          <li><a href="nueva_valencia.html">Nueva Valencia</a></li>
+          <li><a href="san_lorenzo.html">San Lorenzo</a></li>
+          <li><a href="sibunag.html">Sibunag</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="footer-heading">Contact</h6>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Jordan, Guimaras, Philippines</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>(033) 237 1111</span></div>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@guimaras.gov.ph</span></div>
+        <div class="footer-contact-item"><i class="fas fa-globe"></i><span>guimaras.gov.ph</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 Province of Guimaras Tourism.</p>
+    </div>
+  </div>
+</footer>
+<button id="backToTop" title="Back to top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body></html>
