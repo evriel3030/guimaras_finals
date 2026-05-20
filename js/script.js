@@ -460,9 +460,6 @@ const destinations = [
   }
 ];
 
-// ========================================================
-// SCROLL ANIMATION OBSERVER
-// ========================================================
 const animObs = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
@@ -476,9 +473,6 @@ function observeNew(el) {
   requestAnimationFrame(() => animObs.observe(el));
 }
 
-// ========================================================
-// BUILD ONE DESTINATION CARD COLUMN
-// ========================================================
 function buildCard(dest, globalIndex) {
   const fee   = dest.entranceFee.length  > 32 ? dest.entranceFee.substring(0,  32) + '…' : dest.entranceFee;
   const hours = dest.openingHours.length > 30 ? dest.openingHours.substring(0, 30) + '…' : dest.openingHours;
